@@ -1,0 +1,221 @@
+html {
+  background: white;
+}
+
+* {
+  font-family: 'Courier New', Courier, monospace;
+  box-sizing: border-box; /* Box sizing reset for consistency */
+}
+
+body {
+  color: #B19CD9;
+}
+
+h1, .contact-details {
+  text-align: center;
+  color: #9667BB;
+}
+
+hr{
+  border: 1px solid #9667BB;
+}
+.Languages > ul{
+  list-style: none;
+}
+.Languages {
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+.Languages > ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.Languages > ul > li {
+  padding-left: 30px; /* Adjust spacing between flag and text */
+  position: relative;
+  margin-bottom: 5px; /* Adjust spacing between list items */
+}
+
+.Languages > ul > li::before {
+  content: '';
+  width: 20px; /* Adjust flag width */
+  height: 20px; /* Adjust flag height */
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(-50%);
+  margin-bottom: -15px;
+}
+
+.Languages > ul > .English::before {
+  background-image: url('./images/Flag_of_the_United_Kingdom.svg.webp');
+}
+
+.Languages > ul > .Bengali::before {
+  background-image: url('./images/Flag_of_Bangladesh.svg.png');
+}
+
+.Languages > ul > .Spanish::before {
+  background-image: url('./images/Flag_of_Spain.svg.png');
+}
+
+.sections-wrapper {
+  display: flex;
+  justify-content: space-between; /* Adjusts the space between the child elements */
+  align-items: flex-start; /* Aligns items at the start of the flex container */
+  flex-wrap: wrap; /* Allows items to wrap onto the next line if not enough space */
+}
+
+.Certifications, .Languages {
+  flex: 1 1 45%; /* Adjusts flex-grow, flex-shrink, and flex-basis */
+  padding: 0 20px;
+  /* Optional: Explicitly set a width or max-width if you want more control */
+  max-width: 600px; /* Example to prevent sections from getting too wide on larger screens */
+}
+
+
+.navbar-custom {
+  background-color: #E6E6FA; /* Lavender */
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between; /* This spreads items to each end */
+  align-items: center;
+  display: flex;
+  justify-content: space-between; /* Ensures content is justified to each end */
+  align-items: center; /* Aligns items vertically in the center */
+  width: 100%; /* Ensures the navbar takes full width of its container */
+}
+
+.navbar-custom .container-fluid {
+  display: flex;
+  justify-content: space-between; /* This further ensures that the brand and nav links are spread out */
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-custom h1 {
+  margin-right: auto; /* Keeps the h1 (brand) on the left and pushes everything else to the right */
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end; /* Aligns nav links to the right */
+  align-items: center;
+ 
+}
+.nav-link{
+  text-decoration: none;
+  color: #9667BB;
+}
+.navbar-brand {
+  text-decoration: none; /* Removes underline */
+  color: #9667BB; /* Change color from default blue */
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  margin-right: 20px; /* Adjusts right margin to create spacing between links */
+  display: inline-block; /* Ensures links are laid out inline */
+}
+
+/* Remove margin for the last nav-link to avoid extra space at the end */
+.navbar-custom .navbar-nav .nav-link:last-child {
+  margin-right: 0;
+}
+
+.nav-link:hover {
+  color: #D1B3E1; /* Hover color: slightly lighter lilac */
+}
+.navbar-brand:hover {
+  text-decoration: none; /* Keeps the brand from being underlined on hover */
+  color: #D1B3E1; /* Optional: Adjusts the color on hover, if desired */
+}
+
+
+.footer {
+  background-color: #E6E6FA; /* Matches the navbar background */
+  padding:20px 0;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  width: 100%;
+}
+
+.footer-link {
+  display: inline-block;
+  margin: 0 10px; /* Adjusted spacing */
+  color: #9667BB;
+  text-decoration: none;
+  font-size: 16px; /* Reduced font size */
+}
+
+.footer-link:hover {
+  color: #D1B3E1; /* Hover effect */
+}
+.bold{
+  font-weight: bold;
+}
+
+.intro-section {
+  display: flex;
+  align-items: center; /* Vertically align items in the center */
+  justify-content: center; /* Horizontally align items in the center */
+  text-align: left; /* Ensure text within the text div is aligned to the left */
+  padding: 20px; /* Add some padding for spacing */
+}
+
+.intro-text {
+  flex: 1; /* Allows the text div to grow and take up available space */
+  max-width: 50%; /* Optional: limits the width of the text div */
+  text-align: center;
+}
+
+.intro-icon {
+  max-width: 50%; /* Limits the image to take up only half of the section's width */
+  height: auto; /* Maintain aspect ratio */
+  padding-left: 20px; /* Adds spacing between the text and the image */
+}
+
+
+@media (max-width: 768px) {
+  .navbar-custom {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    justify-content: center;
+  }
+
+  .navbar-custom .navbar-nav {
+    flex-direction: column; /* Ensure nav items stack vertically */
+  }
+
+  .navbar-custom .nav-link {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 10px 0; /* Increase vertical spacing */
+  }
+
+  .navbar-custom h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Ensure consistent spacing below the brand */
+  }
+  .intro-section {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .intro-text, .intro-icon {
+    max-width: 100%; /* Allows both text and image to take full width */
+  }
+
+  .intro-icon {
+    padding-left: 0; /* Removes the spacing since it's no longer needed */
+    padding-top: 20px; /* Adds some space between the text and the image */
+  }
+}
+  
+  
+  
+
