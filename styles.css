@@ -15,7 +15,9 @@ h1, .contact-details {
   text-align: center;
   color: #9667BB;
 }
-
+p, ul{
+  color: black;
+}
 hr{
   border: 1px solid #9667BB;
 }
@@ -80,15 +82,13 @@ hr{
 .navbar-custom {
   background-color: #E6E6FA; /* Lavender */
   padding: 0.5rem 1rem;
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 1000;
   display: flex;
   justify-content: space-between; /* This spreads items to each end */
   align-items: center;
-  display: flex;
-  justify-content: space-between; /* Ensures content is justified to each end */
-  align-items: center; /* Aligns items vertically in the center */
+
   width: 100%; /* Ensures the navbar takes full width of its container */
 }
 
@@ -158,6 +158,7 @@ hr{
 }
 .bold{
   font-weight: bold;
+  color: #9667BB;
 }
 
 .intro-section {
@@ -178,6 +179,85 @@ hr{
   max-width: 50%; /* Limits the image to take up only half of the section's width */
   height: auto; /* Maintain aspect ratio */
   padding-left: 20px; /* Adds spacing between the text and the image */
+}
+.projects-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* Increased space between projects */
+  padding: 40px 20px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center-align items */
+  gap: 30px; /* Increased space between image, button, and text */
+  text-align: center;
+}
+
+.project img {
+  width: 120px; /* Adjust based on desired size, increased for visibility */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 30px; /* Increased space above the button */
+  margin-top: 30px;
+}
+
+.project-button {
+  background-color: #9667BB;
+  color: white;
+  border: none;
+  padding: 12px 20px; /* Slightly increased padding for a larger button */
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 20px; /* Increased space between button and text */
+  border-radius: 100px;
+}
+
+.project-info {
+  text-align: center;
+  max-width: 80%; /* Limit text width for readability */
+  margin: 0 auto; /* Center the text block */
+}
+
+
+@media (max-width: 768px) {
+  .project {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project img {
+    width: 80px; /* Slightly smaller images on smaller screens */
+  }
+
+  .project-info {
+    max-width: 100%;
+  }
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+  .project-info, .project-button {
+      max-width: 100%;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .projects-container {
+      flex-direction: column;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .project {
+      flex-basis: 45%; /* Adjust to manage project size on tablets */
+  }
 }
 
 
